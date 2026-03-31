@@ -48,7 +48,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="https://www.linkedin.com/in/ahmed-arafat-flutter"
+              href="https://www.linkedin.com/in/ahmed-arafat-064621231/"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-cta"
