@@ -1,38 +1,5 @@
 import './Education.css'
-
-const education = [
-  {
-    degree: 'Bachelor of Engineering',
-    major: 'Computers & Control Systems',
-    school: 'Faculty of Engineering, Mansoura University',
-    period: '2019 – 2024',
-    grade: 'Very Good (83.91%)',
-    icon: '🎓',
-  },
-]
-
-const certificates = [
-  {
-    name: 'Flutter – Animations',
-    date: 'Oct 2023',
-    icon: '🎬',
-  },
-  {
-    name: 'Flutter Clean Architecture with MVVM',
-    date: 'Apr 2023',
-    icon: '🏗️',
-  },
-  {
-    name: 'The Complete Flutter & Dart Development',
-    date: 'Feb 2022',
-    icon: '📱',
-  },
-  {
-    name: 'The Complete Dart Language Guide',
-    date: 'Jul 2021',
-    icon: '💙',
-  },
-]
+import { education, certificates } from '../data/portfolio'
 
 export default function Education() {
   return (

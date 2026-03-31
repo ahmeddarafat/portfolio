@@ -1,48 +1,54 @@
 import './Contact.css'
+import { personalInfo } from '../data/portfolio'
 
-const contactInfo = [
-  {
-    label: 'Email',
-    value: 'ahmed.arafat3535@gmail.com',
-    href: 'mailto:ahmed.arafat3535@gmail.com',
-    icon: <EmailIcon />,
-  },
-  {
-    label: 'Phone',
-    value: '+20 122 986 2146',
-    href: 'tel:+201229862146',
-    icon: <PhoneIcon />,
-  },
-  {
-    label: 'Location',
-    value: 'Cairo, Egypt',
-    href: '#',
-    icon: <LocationIcon />,
-  },
-  {
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/ahmed-arafat',
-    href: 'https://www.linkedin.com/in/ahmed-arafat-flutter',
-    icon: <LinkedInIcon />,
-    external: true,
-  },
-  {
-    label: 'GitHub',
-    value: 'github.com/ahmed-arafat3535',
-    href: 'https://github.com/ahmed-arafat3535',
-    icon: <GitHubIcon />,
-    external: true,
-  },
-  {
-    label: 'GitLab',
-    value: 'gitlab.com/ahmed-arafat',
-    href: 'https://gitlab.com/ahmed-arafat',
-    icon: <GitLabIcon />,
-    external: true,
-  },
-]
+// Contact cards are built from personalInfo in data/portfolio.js
+// To change email/phone/links, edit that file — no need to touch this component.
+function buildContactInfo() {
+  return [
+    {
+      label: 'Email',
+      value: personalInfo.email,
+      href: `mailto:${personalInfo.email}`,
+      icon: <EmailIcon />,
+    },
+    {
+      label: 'Phone',
+      value: personalInfo.phone,
+      href: `tel:${personalInfo.phone.replace(/\s/g, '')}`,
+      icon: <PhoneIcon />,
+    },
+    {
+      label: 'Location',
+      value: personalInfo.location,
+      href: '#',
+      icon: <LocationIcon />,
+    },
+    {
+      label: 'LinkedIn',
+      value: personalInfo.links.linkedin.replace('https://', ''),
+      href: personalInfo.links.linkedin,
+      icon: <LinkedInIcon />,
+      external: true,
+    },
+    {
+      label: 'GitHub',
+      value: personalInfo.links.github.replace('https://', ''),
+      href: personalInfo.links.github,
+      icon: <GitHubIcon />,
+      external: true,
+    },
+    {
+      label: 'GitLab',
+      value: personalInfo.links.gitlab.replace('https://', ''),
+      href: personalInfo.links.gitlab,
+      icon: <GitLabIcon />,
+      external: true,
+    },
+  ]
+}
 
 export default function Contact() {
+  const contactInfo = buildContactInfo()
   return (
     <section id="contact" className="contact-section">
       <div className="container">
@@ -59,7 +65,7 @@ export default function Contact() {
               my inbox is always open. I'll get back to you as soon as possible.
             </p>
             <a
-              href="mailto:ahmed.arafat3535@gmail.com"
+              href={`mailto:${personalInfo.email}`}
               className="btn btn-primary contact-btn"
             >
               <EmailIcon /> Send an Email

@@ -1,4 +1,5 @@
 import './About.css'
+import { personalInfo, aboutStats } from '../data/portfolio'
 
 export default function About() {
   return (
@@ -29,11 +30,11 @@ export default function About() {
               open-source projects, and continuously level up through certifications and courses.
             </p>
             <div className="about-links">
-              <a href="mailto:ahmed.arafat3535@gmail.com" className="about-link">
-                <EmailIcon /> ahmed.arafat3535@gmail.com
+              <a href={`mailto:${personalInfo.email}`} className="about-link">
+                <EmailIcon /> {personalInfo.email}
               </a>
               <a
-                href="https://github.com/ahmed-arafat3535"
+                href={personalInfo.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about-link"
@@ -41,7 +42,7 @@ export default function About() {
                 <GitHubIcon /> GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/ahmed-arafat-flutter"
+                href={personalInfo.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about-link"
@@ -52,32 +53,22 @@ export default function About() {
           </div>
 
           <div className="about-stats">
-            <div className="stat-card">
-              <span className="stat-number">2+</span>
-              <span className="stat-label">Years Experience</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">10+</span>
-              <span className="stat-label">Apps Shipped</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">10K+</span>
-              <span className="stat-label">App Downloads</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">4</span>
-              <span className="stat-label">Certificates</span>
-            </div>
-            <div className="stat-card feature">
-              <span className="stat-icon">🎓</span>
-              <span className="stat-label">Very Good (83.91%)</span>
-              <span className="stat-sublabel">Mansoura University</span>
-            </div>
-            <div className="stat-card feature">
-              <span className="stat-icon">📍</span>
-              <span className="stat-label">Cairo, Egypt</span>
-              <span className="stat-sublabel">Open to Remote</span>
-            </div>
+            {aboutStats.map((s, i) => (
+              <div key={i} className="stat-card">
+                {s.icon ? (
+                  <>
+                    <span className="stat-icon">{s.icon}</span>
+                    <span className="stat-label">{s.label}</span>
+                    <span className="stat-sublabel">{s.sublabel}</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="stat-number">{s.number}</span>
+                    <span className="stat-label">{s.label}</span>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

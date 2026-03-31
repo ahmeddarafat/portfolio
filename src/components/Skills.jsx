@@ -1,56 +1,5 @@
 import './Skills.css'
-
-const skillGroups = [
-  {
-    title: 'Languages',
-    icon: '💻',
-    skills: ['Dart', 'Python', 'C++', 'C#', 'SQL'],
-  },
-  {
-    title: 'Framework',
-    icon: '📱',
-    skills: ['Flutter'],
-  },
-  {
-    title: 'Architecture',
-    icon: '🏗️',
-    skills: ['Clean Architecture', 'MVVM', 'BLoC Pattern'],
-  },
-  {
-    title: 'State Management',
-    icon: '⚡',
-    skills: ['BLoC / Cubit', 'Riverpod', 'Provider', 'GetX'],
-  },
-  {
-    title: 'Backend Integration',
-    icon: '🔌',
-    skills: ['REST APIs', 'GraphQL', 'WebSocket'],
-  },
-  {
-    title: 'Databases',
-    icon: '🗄️',
-    skills: ['Firebase Auth', 'Firestore', 'Firebase Storage', 'SQLite', 'MS SQL Server'],
-  },
-  {
-    title: 'Core Engineering',
-    icon: '🧠',
-    skills: ['Data Structures & Algorithms', 'OOP', 'SOLID Principles', 'Design Patterns', 'Clean Code'],
-  },
-  {
-    title: 'Tools & CI/CD',
-    icon: '🛠️',
-    skills: ['Git', 'GitHub', 'GitLab', 'CI/CD', 'Agile'],
-  },
-]
-
-const proficiencies = [
-  { name: 'Flutter / Dart', level: 95, color: '#54C5F8' },
-  { name: 'Clean Architecture', level: 90, color: '#02569B' },
-  { name: 'BLoC / State Mgmt', level: 92, color: '#40C4FF' },
-  { name: 'REST API Integration', level: 88, color: '#0288d1' },
-  { name: 'Firebase', level: 85, color: '#FFA000' },
-  { name: 'UI / UX Implementation', level: 87, color: '#26C6DA' },
-]
+import { skillGroups, proficiencies } from '../data/portfolio'
 
 export default function Skills() {
   return (

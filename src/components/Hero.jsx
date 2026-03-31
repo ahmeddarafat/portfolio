@@ -1,4 +1,8 @@
 import './Hero.css'
+import { personalInfo } from '../data/portfolio'
+
+const [firstName, ...rest] = personalInfo.name.split(' ')
+const lastName = rest.join(' ')
 
 export default function Hero() {
   return (
@@ -17,29 +21,28 @@ export default function Hero() {
             <span className="code-tag"> /&gt;</span>
           </p>
           <h1 className="hero-name">
-            Ahmed <span className="gradient-text">Arafat</span>
+            {firstName} <span className="gradient-text">{lastName}</span>
           </h1>
           <h2 className="hero-title">
             <span className="flutter-icon">
               <FlutterLogo />
             </span>
-            Flutter Developer
+            {personalInfo.title}
           </h2>
-          <p className="hero-summary">
-            Passionate Flutter developer crafting beautiful, high-performance cross-platform apps.
-            Clean architecture enthusiast with a focus on scalable code and great user experiences.
-          </p>
+          <p className="hero-summary">{personalInfo.summary}</p>
 
           <div className="hero-badges">
-            <span className="badge">📍 Cairo, Egypt</span>
-            <span className="badge badge-green">🟢 Open to work</span>
+            <span className="badge">📍 {personalInfo.location}</span>
+            {personalInfo.openToWork && (
+              <span className="badge badge-green">🟢 Open to work</span>
+            )}
           </div>
 
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">View Projects</a>
             <a href="#contact" className="btn btn-outline">Contact Me</a>
             <a
-              href="https://github.com/ahmed-arafat3535"
+              href={personalInfo.links.github}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-icon"
@@ -48,7 +51,7 @@ export default function Hero() {
               <GitHubIcon />
             </a>
             <a
-              href="https://www.linkedin.com/in/ahmed-arafat-flutter"
+              href={personalInfo.links.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-icon"
