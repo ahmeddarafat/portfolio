@@ -50,7 +50,8 @@ export default function Navbar() {
           <li>
             <a
               href={personalInfo.resumeLink}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="nav-cta"
             >
               Resume
